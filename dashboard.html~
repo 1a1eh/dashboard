@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type='text/css'>
+
+	  * {
+	  	box-sizing:border-box;
+	  }
+
+      
+      	  @font-face {
+	  	font-family:'Candara';
+	  	src: url('file:///C:/Windows/Fonts/CANDARA.ttf') format('truetype');
+	  }
+
+      html {
+      	font-size:13px;
+      }
+
+	  body, ul, li {
+	  	margin:0;
+	  	padding:0;
+	  }
+
+	  body {
+	  	background-color:#F5F5F5;
+	  	font-family: 'Candara';
+	  	font-size:100%;
+	  	position:relative;
+	  }
+
+	  body:after {
+	  	content:"";
+	  	clear:both;
+	  	display:table;
+	  }
+	  	 
+	  nav {
+	    background-color: black;
+	  	width:80px;
+	  	padding:7px;
+	  	position:absolute;
+	  	top:0px;
+	  	left:0px;
+	  	bottom:0px;
+	
+	  }
+
+	  .home {
+	  	background-image:url('https://app.teamwave.com/pm/images/app-icons-light.svg');
+	  	width:30px;
+	  	height:30px;
+	  	background-size:30px;
+	  	margin:0 auto;
+	  }
+	 
+	  #nav1 {
+	  	background-position:center 0px;
+	  	margin-top:120px;
+	  }
+
+	  #nav2 {
+	  	background-position:center -30px;
+	  	margin-top:45px;
+	  }
+
+	  #nav3 {
+	  	background-position:center -60px;
+	  	margin-top:45px;
+	  }
+
+	  #nav4 {
+	  	background-position: center -90px;
+	  	margin-top:45px;
+	  }
+
+      main {
+       	width:57%;
+        margin:10px 0px 0px 110px;
+        float:left;
+      }
+
+       #heading {
+        color:#C0C0C0;
+        float:left;
+        padding:18px 17px 0px 17px;
+        font: 1.1rem;
+        text-shadow:1px 1px #ececec;
+        text-transform: uppercase;
+       }
+
+       #quick-add {
+       	float:left;
+       	padding:29px;
+       }
+
+       #quick-add button {
+       	background-color: #3CB371;
+       	color:white;
+       	padding:9px 15px;
+       	border: none;
+       	border-radius: 4px;
+       	cursor: pointer;
+       }
+
+       .box {
+       	background-color:white;
+       	margin:0px 5px 15px 0px;
+       	padding:8px 25px 40px 25px;
+       	border-radius:4px;
+       }
+
+       .table {
+       	width:100%;
+       	border-collapse: collapse;
+       }
+
+       .task {
+       	font-weight:bold;
+       }
+
+       .time {
+       	color: #778899;
+       	font-size:0.85rem;
+       	text-shadow: 2px 2px 2px #ececec;
+       	text-transform:uppercase;
+       }
+
+       td, caption {
+       	padding:15px 15px 15px 0px;
+       	text-align:left;
+        border-bottom:1px solid #ececec;
+       }
+
+       .table caption {
+       	font-weight:bold;
+       	text-transform:uppercase;
+       }
+
+
+       .calendar-date {
+       	color:#5B87D4;
+       	width:9%;
+       	font-size:0.85rem;
+       	text-transform:uppercase;
+       }
+
+       .blue-circle {
+       	width:5px;
+       	height:5px;
+       	padding:5px;
+       	background-color:#5B87D4;
+       	border-radius:50%;
+       	display:inline-block;
+       	margin:0px 9px;
+       }
+
+       .green-circle {
+       	width:5px;
+       	height:5px;
+       	padding:5px;
+       	background-color:#61D93D;
+       	border-radius:50%;
+       	display:inline-block;
+       	margin:0px 9px;
+       }
+
+       aside {
+       	width:29%;
+       	margin:93px 20px 0px 30px;
+       	padding:5px;
+       	float:left;
+       }
+
+       .notice {
+       	border-bottom:1px solid #C0C0C0;
+       }
+
+       .notice .board-title {
+       	display:inline-block;
+       	text-transform:uppercase;
+       }
+
+       .notice .new-post {
+       	float:right;
+       	display:inline-block;
+       	color:#5B87D4;
+        text-transform:uppercase;
+       	line-height:57px;
+       	font-weight:bold;
+       }
+
+       a {
+       	text-decoration:none;
+       }
+
+       .notice .time {
+       	display:inline;
+       	
+       } 
+
+       .features {
+       	padding:2px 12px;
+       	margin:20px 0px;
+       	background-color:#FFEBCD;
+       	border-radius:4px;
+       	float:left;
+       	font-weight:bold;
+       }
+
+       .features .new-features {
+       	color:red;
+       	text-transform:uppercase;
+       }
+
+       .features p {
+       	color:#5B87D4;
+       }
+
+       .view-more {
+       	padding:12px 0px;
+       	color:#5B87D4;
+       	text-transform:uppercase;
+       	font-weight:bold;
+       }
+
+       .clear {
+       	clear:both;
+       }
+
+	  @media (max-width-width:575px) {
+	  	body {
+	  		font-size:80%;
+	  	}
+
+
+	  	main, aside {
+	  		width:80%;
+	  		float:none;
+	  		margin:0 auto;
+	  }
+	    nav {
+	    	width:15%;
+	    	position:fixed;
+	    }
+}
+ 
+	</style>
+</head>
+
+<body>
+        <nav>
+            <ul>
+              <li class='home' id='nav1'><a href='#'></a></li>
+              <li class='home' id='nav2'><a href='#'></a></li>
+              <li class='home' id='nav3'><a href='#'></a></li>
+              <li class='home' id='nav4'><a href='#'></a></li>
+            </ul>
+        </nav>
+    
+        <main>
+            <h3 id='heading'>dashboard</h3>
+
+            <div id='quick-add'>
+            <button>+ Quick add </button>
+            </div>
+       
+        <div class='clear'></div>
+        
+        <div class='box'>
+            <table class='table'>
+              <caption>my tasks</caption>
+              <tr>
+                <td class='time'><input type='checkbox'> yesterday</td>
+                <td class='task'><div class='blue-circle'></div>Hangout with Jhone Collision</td>
+              </tr>
+              <tr>
+                <td class='time'><input type='checkbox'> oct 18</td>
+                <td class='task'><div class='green-circle'></div>Accounts with events from hundreds of projects</td>
+              </tr>
+              <tr>
+                <td class='time'><input type='checkbox'> no due date</td>
+                <td class='task'><div class='green-circle'></div>Essential features are always just a raise of the product</td>
+              </tr>
+              <tr>
+                <td class='time'><input type='checkbox'> oct 25</td>
+                <td class='task'><div class='green-circle'></div>Michael did a PDI on Outlook, Google and iPhone integration</td>
+              </tr>
+              <tr>
+                <td class='time'><input type='checkbox'> oct 25</td>
+                <td class='task'><div class='blue-circle'></div>Hangout with Jhone Collision</td>
+              </tr>
+              <tr>
+                <td class='time'><input type='checkbox'> oct 25</td>
+                <td class='task'><div class='green-circle'></div>Michael did a PDI on Outlook, Google and iPhone integration</td>
+              </tr>
+
+            </table>
+        </div>
+       
+        <div class='box'>
+            <table class='table'>
+              <caption>my calendar</caption>
+              <tr>
+                <td class='calendar-date'>today</td>
+                <td class='time'>10:30 AM</td>
+                <td>Blackmonk upcoming team meeting</td>
+              </tr>
+              <tr>
+                <td class='calendar-date'>oct 22</td>
+                <td class='time'>--:--</td>
+                <td>Marketing website landing Page, Infographics</td>
+              </tr>
+              <tr>
+                <td class='calendar-date'>oct 22</td>
+                <td class='time'>--:--</td>
+                <td>Donec accumsan augue vitae semper convallis</td>
+              </tr>
+            </table>
+        </div>
+    </main>
+
+    <aside>
+        <div class='notice'>
+          <h4 class='board-title'>notice board</h4>
+          <div class='new-post'><a href='#'>+new post</a></div>
+        </div>
+        <div class='notice'>
+          <p>Michael did a PDI on Outlook, Google and iPhone integration.
+          <br>Kerem . <div class='time'>October 12</div></p>
+        </div>
+        <div class='notice'>
+          <p>Track your daily activity. Control your music using only voice.
+          <br>Blal Ck . <div class='time'>October 4</div></p>
+        </div>
+        <div class='notice'>
+          <p>Michael did a PDI on Outlook, Google and iPhone integration.
+          <br>Tanya . <div class='time'>September 10</div></p>
+        </div>
+        <div class='notice'>
+          <p>Track your daily activity. Control your music using only voice.
+          <br>Hanna . <div class='time'>April 28</div></p>
+        </div>
+
+        <div class='view-more'><a href='#'>view more</a></div>
+
+        <div class='features'>
+          <p class='new-features'>new features</p>
+          <p>New in TeamWave:Introducing Project Templates, and more...</p>
+        </div>
+
+    </aside>
+   
+</body>
+</html>
